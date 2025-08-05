@@ -1,14 +1,18 @@
 <script>
 	import FixedExpense from './FixedExpense.svelte';
 	import { fixedSpendingList } from '$lib/store.svelte';
-	import { formatter } from '$lib/utils';
+	import { formatter, deleteExpense } from '$lib/utils';
 
 	let newExpense = $state('');
 	let newAmount = $state(0);
 	let totalFixed = $derived(
 		fixedSpendingList.current.reduce((total, expense) => total + Number(expense.amount), 0)
 	);
-	let { addFixedExpense } = $props();
+	let { addFixedExpense, totalSpending = $bindable() } = $props();
+
+	$effect(() => {
+		totalSpending = totalFixed;
+	});
 
 	function addExpense(e) {
 		e.preventDefault();
@@ -34,14 +38,20 @@
 			</label>
 			<label>
 				Amount
-				<input type="number" name="newAmount" placeholder="Amount" bind:value={newAmount} />
+				<input
+					type="number"
+					step="0.01"
+					name="newAmount"
+					placeholder="Amount"
+					bind:value={newAmount}
+				/>
 			</label>
 		</div>
 		<button class="form-button">Add</button>
 	</form>
 
 	<div class="break"></div>
-	<!-- hardcoded list for now -->
+
 	<ul>
 		{#if fixedSpendingList.current.length}
 			{#each fixedSpendingList.current as item (item.id)}

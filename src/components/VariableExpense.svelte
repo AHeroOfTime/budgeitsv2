@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { Trash2 } from '@lucide/svelte';
-	import { fixedSpendingList } from '$lib/store.svelte';
+	import { variableSpendingList } from '$lib/store.svelte';
 	import { formatter, deleteExpense } from '$lib/utils';
 
 	let newExpense = $state('');
