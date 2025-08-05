@@ -4,14 +4,23 @@
 	import FixedSpending from '../components/FixedSpending.svelte';
 	import VariableSpending from '../components/VariableSpending.svelte';
 	import { monthlyIncome } from '../lib/store.svelte';
+	import { fixedSpendingList } from '$lib/store.svelte';
 	import { formatter } from '$lib/utils';
+
+	function addFixedExpense(newExpense, newAmount) {
+		fixedSpendingList.current.push({
+			id: crypto.randomUUID(),
+			expense: newExpense,
+			amount: newAmount
+		});
+	}
 </script>
 
 <div class="container">
 	<Header />
 	<MonthlyIncome />
 	<div class="grid">
-		<FixedSpending />
+		<FixedSpending {addFixedExpense} />
 		<VariableSpending />
 	</div>
 
