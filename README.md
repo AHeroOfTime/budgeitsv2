@@ -1,3 +1,7 @@
+# Budge It
+
+Bugeting app built with Svelte(kit) and Pico CSS. Try it out [Here]()
+
 # sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).

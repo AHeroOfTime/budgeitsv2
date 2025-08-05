@@ -34,11 +34,11 @@
 	function checkDisposableIncome() {
 		const getSpan = document.getElementById('disposable-income');
 		if (disposableIncome === 0) {
-			getSpan.style.setProperty('--value-color', '#c2c7d0');
+			getSpan.style.setProperty('--pico-color');
 		} else if (disposableIncome > 0) {
-			getSpan.style.setProperty('--value-color', '#398712');
+			getSpan.style.setProperty('--pico-color', '#398712');
 		} else if (disposableIncome < 0) {
-			getSpan.style.setProperty('--value-color', '#D93526');
+			getSpan.style.setProperty('--pico-color', '#D93526');
 		}
 	}
 
@@ -76,6 +76,6 @@
 	}
 
 	#disposable-income {
-		color: var(--value-color, #c2c7d0);
+		color: var(--pico-color);
 	}
 </style>
