@@ -1,6 +1,8 @@
 <script>
 	import Header from '../components/Header.svelte';
 	import MonthlyIncome from '../components/MonthlyIncome.svelte';
+	import FixedSpending from '../components/FixedSpending.svelte';
+	import VariableSpending from '../components/VariableSpending.svelte';
 	import { monthlyIncome } from '../lib/store.svelte';
 	import { formatter } from '$lib/utils';
 </script>
@@ -8,6 +10,10 @@
 <div class="container">
 	<Header />
 	<MonthlyIncome />
+	<div class="grid">
+		<FixedSpending />
+		<VariableSpending />
+	</div>
 
 	<footer>
 		<ul>

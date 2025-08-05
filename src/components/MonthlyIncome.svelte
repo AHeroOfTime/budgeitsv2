@@ -4,6 +4,10 @@
 
 	function submitIncome(e) {
 		e.preventDefault();
+		if (newIncome <= 0) {
+			alert('You must enter valid income greater than 0');
+			return;
+		}
 		monthlyIncome.current = newIncome;
 		newIncome = '';
 	}
@@ -13,7 +17,7 @@
 	<form onsubmit={submitIncome}>
 		<label>
 			Monthly Income
-			<input name="income" type="number" bind:value={newIncome} placeholder="Monthly Income" />
+			<input name="income" type="number" bind:value={newIncome} placeholder="Enter income..." />
 		</label>
 		<div>
 			<button>Submit</button>
