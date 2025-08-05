@@ -1,6 +1,6 @@
 # Budge It
 
-Bugeting app built with Svelte(kit) and Pico CSS. Try it out [Here]()
+Bugeting app built with Svelte(kit) and Pico CSS. Try it out [Here](https://budgeitsv2.vercel.app/)
 
 # sv
 
