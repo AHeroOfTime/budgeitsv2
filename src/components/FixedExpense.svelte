@@ -21,14 +21,22 @@
 	}
 </script>
 
-<li>
-	{item ? item.expense : null} : {item ? formatter.format(item.amount) : null}
-</li>
-<button class="delete-button">
-	<Trash2 />
-</button>
+<div class="wrapper">
+	<li>
+		{item ? item.expense : null} : {item ? formatter.format(item.amount) : null}
+	</li>
+	<button class="delete-button">
+		<Trash2 />
+	</button>
+</div>
 
 <style>
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+	}
 	.delete-button {
 		background-color: #af291d;
 		border: #af291d;
