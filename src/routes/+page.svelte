@@ -84,5 +84,6 @@
 		padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
 		background-color: var(--pico-card-sectioning-background-color);
 		border-radius: var(--pico-border-radius);
+		margin-bottom: 1rem;
 	}
 </style>
