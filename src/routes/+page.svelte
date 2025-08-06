@@ -34,7 +34,7 @@
 	function checkDisposableIncome() {
 		const getSpan = document.getElementById('disposable-income');
 		if (disposableIncome === 0) {
-			getSpan.style.setProperty('--pico-color');
+			getSpan.style.setProperty('--pico-color', '--pico-color');
 		} else if (disposableIncome > 0) {
 			getSpan.style.setProperty('--pico-color', '#398712');
 		} else if (disposableIncome < 0) {
@@ -69,6 +69,7 @@
 <style>
 	ul {
 		padding: 0;
+		margin-bottom: 0;
 	}
 
 	li {
@@ -77,5 +78,11 @@
 
 	#disposable-income {
 		color: var(--pico-color);
+	}
+
+	footer {
+		padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
+		background-color: var(--pico-card-sectioning-background-color);
+		border-radius: var(--pico-border-radius);
 	}
 </style>

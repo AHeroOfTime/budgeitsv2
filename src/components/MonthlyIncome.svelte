@@ -19,7 +19,7 @@
 			Monthly Income
 			<input name="income" type="number" bind:value={newIncome} placeholder="Enter income..." />
 		</label>
-		<div>
+		<div class="button-wrapper">
 			<button>Submit</button>
 		</div>
 	</form>
@@ -29,6 +29,10 @@
 	form {
 		display: flex;
 		justify-content: space-between;
+		gap: 1rem;
 		align-items: center;
+	}
+	.button-wrapper {
+		margin-top: calc(var(--pico-spacing) * 0.25);
 	}
 </style>
